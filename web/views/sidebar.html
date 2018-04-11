@@ -1,0 +1,50 @@
+<nav class="sidebar well">
+  <form class="form-horizontal">    
+    <fieldset>
+      <div class="formgroup">
+        <label for="sdkCommandReq">Messages</label>
+        
+        <select ng-model="sidebar.activeMessage" id="sdkCommandReq" class="form-control">
+           <option ng-repeat="request in sidebar.messages">{{request}}</option>
+        </select>
+      </div>
+       <div class="formgroup">
+        <label for="sdkCommandResp">Subscriptions</label>
+        
+        <select ng-model="sidebar.activeMessage" id="sdkCommandResp" class="form-control">
+           <option ng-repeat="subscription in sidebar.subscriptions">{{subscription}}</option>
+        </select>
+      </div>
+     </fieldset>
+    <fieldset>
+      <div class="formgroup row">
+        <label class="col-sm-7" for="sdkVersion">Max SDK Version</label>
+        
+        <div class="col-sm-5">
+        <select ng-model="sidebar.version" id="sdkVersion" class="form-control">
+           <option ng-repeat="version in sidebar.versions">{{version}}</option>
+        </select>
+        </div>
+      </div>
+    </fieldset>
+    
+    <fieldset>
+        <label class="radio-inline">
+          <input ng-model="sidebar.qbXML" type="radio" name="qbType"> qbXML
+        </label>
+        <label class="radio-inline">
+          <input ng-model="sidebar.qbFC" type="radio" name="qbType"> qbFC
+        </label>
+    </fieldset>
+    <fieldset>
+      <div class="checkbox" ng-repeat="country in sidebar.countries">
+        <label>
+          <input ng-model="country.use" ng-value="country.isDefault" type="checkbox"> {{country.country}} 
+        </label>
+      </div>
+      
+    </fieldset>
+    
+    
+  </form>
+</nav>
